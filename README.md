@@ -1,6 +1,6 @@
 ## go-with-tests
 
-This repository is dedicated to learning Go programming with a focus on test-driven development.
+This repository is dedicated to learning git basics.
 
 ### Step 1: Install Git
 ### Step 2: Configure Git
@@ -22,8 +22,20 @@ This repository is dedicated to learning Go programming with a focus on test-dri
 
 ` git commit -m "Add my changes" `
 
-### Step 3: Push Changes to GitHub
+### Step 6: Push Changes to GitHub
 `git push origin go-basics `
+
+### Merge Branch into Main
+Once your feature branch is up to date and conflicts are resolved, you can merge it into the main branch.
+
+1. Switch to the main branch: `git checkout main`
+2. Ensure the main branch is up to date with the remote repository:
+
+`git fetch origin`
+
+`git merge origin/main`
+
+3. Merge your feature branch into the main branch: `git merge feature-branch-name` ` git push origin main`
 
 ### Create a Pull Request
 
@@ -31,6 +43,16 @@ This repository is dedicated to learning Go programming with a focus on test-dri
 2. Click on "Pull requests" > "New pull request."
 3. Select go-basics as the branch to compare.
 4. Review the changes and click "Create pull request."
+
+### Seeing Differences and History
+1. To see differences between commits:  `git diff [commit1] [commit2]`
+2. To see the history of your repository:  `git log `
+
+### Rebasing PRs
+Rebasing is used to integrate changes from one branch into another by moving or combining a sequence of commits.
+
+Ensure your branch is up to date with the main branch by running `git fetch origin` and then `git rebase origin/main`
+Force push your changes if necessary with `git push origin go-basics --force`
 
 https://about.gitlab.com/images/press/git-cheat-sheet.pdf
 
