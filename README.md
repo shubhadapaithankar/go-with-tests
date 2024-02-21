@@ -1,4 +1,4 @@
-## go-with-tests
+# go-with-tests
 
 This repository is dedicated to learning git basics.
 
@@ -26,7 +26,7 @@ This repository is dedicated to learning git basics.
 `git push origin go-basics `
 
 ### Merge Branch into Main
-Once your feature branch is up to date and conflicts are resolved, you can merge it into the main branch.
+Once feature branch is up to date and conflicts are resolved, we can merge it into the main branch.
 
 1. Switch to the main branch: `git checkout main`
 2. Ensure the main branch is up to date with the remote repository:
@@ -35,7 +35,7 @@ Once your feature branch is up to date and conflicts are resolved, you can merge
 
 `git merge origin/main`
 
-3. Merge your feature branch into the main branch: `git merge feature-branch-name` ` git push origin main`
+3. Merge feature branch into the main branch: `git merge feature-branch-name` ` git push origin main`
 
 ### Create a Pull Request
 
@@ -52,7 +52,7 @@ Once your feature branch is up to date and conflicts are resolved, you can merge
 Rebasing is used to integrate changes from one branch into another by moving or combining a sequence of commits.
 
 Ensure your branch is up to date with the main branch by running `git fetch origin` and then `git rebase origin/main`
-Force push your changes if necessary with `git push origin go-basics --force`
+Force push the changes if necessary with `git push origin go-basics --force`
 
 https://about.gitlab.com/images/press/git-cheat-sheet.pdf
 
