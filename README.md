@@ -39,19 +39,19 @@ Once feature branch is up to date and conflicts are resolved, we can merge it in
 
 ### Create a Pull Request
 
-1. Go to your repository on GitHub.
+1. Go to the repository on GitHub.
 2. Click on "Pull requests" > "New pull request."
 3. Select go-basics as the branch to compare.
 4. Review the changes and click "Create pull request."
 
 ### Seeing Differences and History
 1. To see differences between commits:  `git diff [commit1] [commit2]`
-2. To see the history of your repository:  `git log `
+2. To see the history of repository:  `git log `
 
 ### Rebasing PRs
 Rebasing is used to integrate changes from one branch into another by moving or combining a sequence of commits.
 
-Ensure your branch is up to date with the main branch by running `git fetch origin` and then `git rebase origin/main`
+Ensure thebranch is up to date with the main branch by running `git fetch origin` and then `git rebase origin/main`
 Force push the changes if necessary with `git push origin go-basics --force`
 
 https://about.gitlab.com/images/press/git-cheat-sheet.pdf
