@@ -1,4 +1,4 @@
-#This repository is dedicated to learning git basics and Go language
+# This repository is dedicated to learning git basics and Go language
 
 ### Step 1: Install Git
 ### Step 2: Configure Git
