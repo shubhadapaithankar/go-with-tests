@@ -9,7 +9,9 @@ import (
 // Greet sends a greeting to a writer.
 func Greet(writer io.Writer, name string) {
 	// fmt.Fprintf to format the greeting message and write it to the provided writer.
-	fmt.Fprintf(writer, "Hello, %s", name)
+	//fmt.Fprintf(writer, "Hello, %s", name)
+
+	fmt.Fprintf(writer, "Hello, %s", name) //remove the space after the comma
 }
 
 func main() {
