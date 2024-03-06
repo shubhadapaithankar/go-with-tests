@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// Compares the response times of a and b, returning the fastest one.
+// fetching urls a and b, returning the fastest one.
 func Racer(a, b string, timeout time.Duration) (winner string, err error) {
 	select {
 	case <-ping(a):
