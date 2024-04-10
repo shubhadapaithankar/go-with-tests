@@ -1,10 +1,9 @@
 package blogposts_test
 
 import (
+	"blogposts"
 	"testing"
 	"testing/fstest"
-
-	"github.com/yourusername/yourproject/blogposts"
 )
 
 func TestNewPostsFromFS(t *testing.T) {

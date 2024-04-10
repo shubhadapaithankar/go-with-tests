@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}} - My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        header, footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        article {
+            margin-bottom: 20px;
+        }
+        ul.tags {
+            list-style: none;
+            padding: 0;
+        }
+        ul.tags li {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 5px 10px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{.Title}}</h1>
+        <p>{{.Description}}</p>
+    </header>
+    
+    <article>
+        {{.Body}}
+    </article>
+    
+    <footer>
+        <ul class="tags">
+            {{range .Tags}}
+                <li>{{.}}</li>
+            {{end}}
+        </ul>
+    </footer>
+</body>
+</html>
