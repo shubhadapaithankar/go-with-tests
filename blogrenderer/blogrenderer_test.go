@@ -1,51 +1,30 @@
-package blogrenderer
+package blogrenderer_test
 
 import (
-	"embed"
-	"html/template"
-	"io"
+    "bytes"
+    "testing"
+    "github.com/shubhadapaithankar/go-with-tests/blogrenderer" 
 
-	"github.com/gomarkdown/markdown"
-	"github.com/gomarkdown/markdown/parser"
-)
+func TestRenderBlogPost(t *testing.T) {
+    // Example blog post data
+    post := blogrenderer.Post{
+        Title:       "Test Post",
+        Description: "This is a test post.",
+        Body:        "<p>This is the content of the test post.</p>",
+        Tags:        []string{"test", "blog"},
+    }
 
-var (
-	//go:embed "templates/*"
-	postTemplates embed.FS
-)
+    // Create a buffer to write our output to
+    var buf bytes.Buffer
 
-type PostRenderer struct {
-	templ    *template.Template
-	mdParser *parser.Parser
-}
+    // Attempt to render the post
+    err := blogrenderer.Render(&buf, post)
+    if err != nil {
+        t.Errorf("Render failed: %v", err)
+    }
 
-func NewPostRenderer() (*PostRenderer, error) {
-	templ, err := template.ParseFS(postTemplates, "templates/*.gohtml")
-	if err != nil {
-		return nil, err
-	}
-
-	extensions := parser.CommonExtensions | parser.AutoHeadingIDs
-	parser := parser.NewWithExtensions(extensions)
-
-	return &PostRenderer{templ: templ, mdParser: parser}, nil
-}
-
-func (r *PostRenderer) Render(w io.Writer, p Post) error {
-	return r.templ.ExecuteTemplate(w, "blog.gohtml", newPostVM(p, r))
-}
-
-func (r *PostRenderer) RenderIndex(w io.Writer, posts []Post) error {
-	return r.templ.ExecuteTemplate(w, "index.gohtml", posts)
-}
-
-type postViewModel struct {
-	Post
-	HTMLBody template.HTML
-}
-
-func newPostVM(p Post, r *PostRenderer) postViewModel {
-	vm := postViewModel{Post: p}
-	vm.HTMLBody = template.HTML(markdown.ToHTML([]byte(p.Body), r.mdParser, nil))
-	return vm
+   
+    if !bytes.Contains(buf.Bytes(), []byte(post.Title)) {
+        t.Errorf("Rendered content does not contain the post title '%s'", post.Title)
+    }
 }
