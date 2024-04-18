@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"Templating/blogrenderer"
+	"github.com/shubhadapaithankar/go-with-tests/Templating/blogrenderer"
 )
 
 func TestRender(t *testing.T) {

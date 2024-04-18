@@ -1,11 +1,10 @@
 package stack
 
-// Stack represents a generic LIFO (last in, first out) stack.
 type Stack[T any] struct {
 	values []T
 }
 
-// NewStack creates a new stack.
+// creates a new stack.
 func NewStack[T any]() *Stack[T] {
 	return &Stack[T]{}
 }
@@ -15,7 +14,6 @@ func (s *Stack[T]) Push(value T) {
 	s.values = append(s.values, value)
 }
 
-// Pop removes the item from the top of the stack and returns it, along with a boolean indicating if the operation was successful.
 func (s *Stack[T]) Pop() (T, bool) {
 	if len(s.values) == 0 {
 		var zero T // Get zero value of type T.
@@ -27,7 +25,7 @@ func (s *Stack[T]) Pop() (T, bool) {
 	return element, true
 }
 
-// IsEmpty checks if the stack is empty.
+// checks if the stack is empty.
 func (s *Stack[T]) IsEmpty() bool {
 	return len(s.values) == 0
 }
